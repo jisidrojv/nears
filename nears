@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# NEARS CLI - Wrapper rápido de desarrollo
+# Para invocarlo usa ./nears <comando>
+
+case "$1" in
+    dev)
+        echo "🚀 Iniciando entorno de desarrollo NEARS..."
+        make dev
+        ;;
+    build)
+        echo "📦 Construyendo producción..."
+        make build
+        ;;
+    reset)
+        echo "🔥 Iniciando reset de base de datos..."
+        make db-reset
+        ;;
+    clean)
+        echo "🧹 Limpiando el proyecto..."
+        make clean
+        ;;
+    *)
+        echo "🦀 NEARS Comandos Locales:"
+        echo "  ./nears dev     ->  Inicia el servidor de desarrollo y compila CSS."
+        echo "  ./nears build   ->  Compila el proyecto y CSS para producción."
+        echo "  ./nears reset   ->  Purgar DB, correr migraciones y datos base."
+        echo "  ./nears clean   ->  Limpia los archivos build con cargo clean."
+        echo ""
+        echo "💡 Tip: Si quieres usar solo 'nears dev' sin el './', añade la carpeta del proyecto a tu PATH temporal o configura un alias local."
+        ;;
+esac

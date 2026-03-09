@@ -1,0 +1,7 @@
+/target
+.env
+*.swp
+*.swo
+.DS_Store
+tailwindcss-linux-x64
+public/style.css
