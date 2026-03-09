@@ -1,3 +1,5 @@
+![NEARS Logo](nears-logo.png)
+
 # NEARS
 
 NEARS is an SSR web framework in Rust inspired by the ergonomics of Next.js, but built with a native Rust stack: Axum, Maud, PostgreSQL, HTMX, Alpine, and Tailwind CLI.
