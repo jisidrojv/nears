@@ -44,7 +44,8 @@ Before running the project on your machine, you need:
 1. Stable Rust
 2. Cargo
 3. PostgreSQL running locally
-4. Linux or a compatible environment for the bundled `tailwindcss-linux-x64` binary
+4. Tailwind CSS standalone CLI
+5. Linux for `tailwindcss-linux-x64`, or the matching Tailwind standalone binary for your OS
 
 ## Local setup
 
@@ -55,7 +56,18 @@ git clone <your-repo>
 cd <your-repo>/nears
 ```
 
-### 2. Create the database
+### 2. Download Tailwind CSS standalone CLI
+
+Linux:
+
+```bash
+curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
+chmod +x tailwindcss-linux-x64
+```
+
+If you are on macOS or Windows, download the matching standalone binary from the Tailwind CSS releases page and place it in the project root as `tailwindcss-linux-x64`, or adjust the `TAILWIND` variable in `Makefile`.
+
+### 3. Create the database
 
 Create a PostgreSQL database, for example:
 
@@ -63,7 +75,7 @@ Create a PostgreSQL database, for example:
 CREATE DATABASE nears;
 ```
 
-### 3. Configure `.env`
+### 4. Configure `.env`
 
 Create a `.env` file inside `nears/`:
 
@@ -74,7 +86,13 @@ DATABASE_URL=postgresql://user:password@localhost:5432/nears
 JWT_SECRET=replace-this-with-a-long-random-secret
 ```
 
-### 4. Reset schema and seed initial data
+You can also start from:
+
+```bash
+cp .env.example .env
+```
+
+### 5. Reset schema and seed initial data
 
 ```bash
 ./nears reset
