@@ -52,8 +52,8 @@ Before running the project on your machine, you need:
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo>
-cd <your-repo>/nears
+git clone https://github.com/jisidrojv/nears.git
+cd nears
 ```
 
 ### 2. Download Tailwind CSS standalone CLI
